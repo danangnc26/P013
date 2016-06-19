@@ -148,9 +148,9 @@
 						<li>Transaksi dengan menggunakan metode pembayaran transfer akan ditambahkan kode pembayaran*.</li>
 						<li>Pembayaran dengan angka yang tidak tepat menyebabkan proses verifikasi terhambat.</li>
 						<li>Total pembayaran transaksi yang harus dibayar beserta kode pembayaran dapat diketahui setelah mengklik tombol LANJUT.</li>
-						<li>Transaksi dianggap batal jika dalam 1×10 jam pembayaran belum dilunasi.</li>
+						<li>Transaksi dianggap batal jika dalam 1x24 jam pembayaran belum dilunasi.</li>
 					</ol>
-					Klik tombol LANJUT jika Anda telah memahami dan menyetujui ketentuan transaksi di atas. Bukalapak akan mengirim tagihan pembayaran ke enncce@gmail.com.
+					Klik tombol LANJUT jika Anda telah memahami dan menyetujui ketentuan transaksi di atas. LuppyShop akan mengirim tagihan pembayaran ke email anda.
 					</small>
 				</p>
 				</div>
