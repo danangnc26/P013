@@ -201,7 +201,7 @@
 				<div class="row">
 					<label class="col-md-4"></label>
 					<div class="col-md-8">
-						<button class="btn btn-cst red"><i class="fa fa-arrow-left"></i> Lanjut checkout</button>
+						<button class="btn btn-cst red"><i class="fa fa-arrow-right"></i> Lanjut checkout</button>
 						<a href="<?php echo app_base.'cart' ?>">
 							<button type="button" class="btn btn-cst red"><i class="fa fa-arrow-left"></i> Kembali</button>
 						</a>
