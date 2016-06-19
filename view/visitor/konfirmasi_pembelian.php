@@ -44,8 +44,8 @@
 							</div>
 							<label class="b">Bank BCA, Ambarawa</label><br>
 							No. Rekening<br>
-							<label class="b">123</label><br>
-							a.n. ASDF
+							<label class="b">3200419625</label><br>
+							a.n. Luppy Shop
 						</center>
 					</div>
 					<div class="col-xs-6 col-md-3">
@@ -55,8 +55,8 @@
 							</div>
 							<label class="b">Bank Mandiri, Ambarawa</label><br>
 							No. Rekening<br>
-							<label class="b">123</label><br>
-							a.n. ASDF
+							<label class="b">023842042042127</label><br>
+							a.n. Luppy Shop
 						</center>
 					</div>
 					<div class="col-xs-6 col-md-3">
@@ -66,8 +66,8 @@
 							</div>
 							<label class="b">Bank BNI, Ambarawa</label><br>
 							No. Rekening<br>
-							<label class="b">123</label><br>
-							a.n. ASDF
+							<label class="b">019239128121243</label><br>
+							a.n. Luppy Shop
 						</center>
 					</div>
 					<div class="col-xs-6 col-md-3">
@@ -77,8 +77,8 @@
 							</div>
 							<label class="b">Bank BRI, Ambarawa</label><br>
 							No. Rekening<br>
-							<label class="b">123</label><br>
-							a.n. ASDF
+							<label class="b">051301003984539</label><br>
+							a.n. Luppy Shop
 						</center>
 					</div>
 				</div>
