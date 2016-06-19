@@ -167,9 +167,9 @@ input.cst, select.cst, textarea.cst{
 		background: #fff;
 	}
 
-	.thumbnail>img{
+	/*.thumbnail>img{
 		height: 230px;
-	}
+	}*/
 
 	.full{
 		width: 100%;
