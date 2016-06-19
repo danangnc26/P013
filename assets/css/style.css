@@ -167,9 +167,17 @@ input.cst, select.cst, textarea.cst{
 		background: #fff;
 	}
 
-	/*.thumbnail>img{
-		height: 230px;
-	}*/
+	.thumbnail{
+		/*height: 300px;
+		min-height: 280px;*/
+		/*max-height: 300px;*/
+	}
+
+	.judul-barang{
+		/*border:1px solid #000;*/
+		height: 45px;
+		overflow: hidden;
+	}
 
 	.full{
 		width: 100%;

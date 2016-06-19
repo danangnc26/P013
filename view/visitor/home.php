@@ -18,7 +18,7 @@
 						<div class="thumbnail">
 							<img src="<?php echo base_url.'public/images/'.$value1['gambar'] ?>" alt="Gambar <?php echo $value1['nama_barang'] ?>">
 							<div class="caption">
-								<h5><?php echo $value1['nama_barang'] ?></h5>
+								<h5 class="judul-barang"><?php echo $value1['nama_barang'] ?></h5>
 								<div class="input-group">
 									<input type="text" class="form-control cst" readonly style="background:#fff" value="<?php echo Lib::ind($value1['harga']) ?>">
 									<span class="input-group-btn">
