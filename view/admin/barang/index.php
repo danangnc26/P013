@@ -34,7 +34,7 @@
 					<tr>
 						<td><?php echo $key+1 ?></td>
 						<td><?php echo $value['nama_barang'] ?></td>
-						<td><?php echo $value['berat'] ?> kg</td>
+						<td><?php echo $value['berat'] ?> gr</td>
 						<td><?php echo Lib::ind($value['harga']) ?></td>
 						<td><?php echo $value['stok'] ?></td>
 						<td align="center"><?php echo Lib::publikasi($value['publikasi']) ?></td>
