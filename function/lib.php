@@ -49,6 +49,9 @@ Class Lib{
 	{
 		
 		switch ($v) {
+			case 'r':
+				$vf = 'Barang dikembalikan';
+				break;
 			case '-':
 				$vf = '<i class="fa fa-close"></i> Pemesanan Dibatalkan';
 				break;
@@ -65,9 +68,12 @@ Class Lib{
 				$vf = '<i class="fa fa-spinner"></i> Sedang Diproses';
 				break;
 			case '4':
-				$vf = '<i class="fa fa-cab"></i> Barang Dikirim';
+				$vf = '<i class="fa fa-bus"></i> Barang Dikirim';
 				break;
 			case '5':
+				$vf = '<i class="fa fa-dropbox"></i> Barang Diterima';
+				break;
+			case '6':
 				$vf = '<i class="fa fa-check"></i> Selesai';
 				break;
 			
@@ -204,6 +210,23 @@ Class Lib{
     	$result = $j->createCart();
     	if($result != null){
     		return $result;
+    	}
+    }
+
+    public static function getConfirm($id)
+    {
+    	$j = new KonfirmasiPembayaran();
+    	return $j->findBy('kode_beli', $id);
+    }
+
+    public static function pendingNotif()
+    {
+    	$j = new Beli();
+    	$result = $j->findAll("where status=1");
+    	if($result != null){
+    		return count($result);
+    	}else{
+    		return 0;
     	}
     }
 

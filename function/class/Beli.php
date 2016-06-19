@@ -103,6 +103,9 @@ class Beli extends Core{
 	{
 		try {
 			$data = ['status' => $input['status']];
+			if($input['status'] == '4'){
+				$data['resi']	= Lib::genStr(20);
+			}
 			if($this->update($data, $this->primaryKey, $input['kode_beli'])){
 				echo Lib::redirectjs(app_base.'detail_pesanan&kode_beli='.$input['kode_beli'], 'Status Berhasil diubah.');
 			}else{

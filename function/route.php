@@ -17,6 +17,7 @@ function route($page)
 	$barang = new Barang();
 	$beli = new Beli();
 	$itembeli = new ItemCart();
+	$konfirmasi = new KonfirmasiPembayaran();
 	
 	switch ($page) {
 		case 'login':
@@ -163,6 +164,9 @@ function route($page)
 				$data1 = $beli->detailBeli($g['kode_beli']);
 				$data2 = $itembeli->barangBeli($g['kode_beli']);
 				include "view/visitor/detail_pembelian.php";
+			break;
+		case 'save_konfirmasi':
+				$konfirmasi->saveKonfirmasi($p);
 			break;
 		case 'tesongkir':
 				// Ongkir::getProvList();

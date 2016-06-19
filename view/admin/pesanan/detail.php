@@ -26,7 +26,8 @@
 								<option <?php echo ($value1['status'] == '2') ? 'selected' : '' ?> value="2">Pembayaran Lunas</option>
 								<option <?php echo ($value1['status'] == '3') ? 'selected' : '' ?> value="3">Sedang Diproses</option>
 								<option <?php echo ($value1['status'] == '4') ? 'selected' : '' ?> value="4">Barang Dikirim</option>
-								<option <?php echo ($value1['status'] == '5') ? 'selected' : '' ?> value="5">Selesai</option>
+								<option <?php echo ($value1['status'] == '5') ? 'selected' : '' ?> value="5">Barang Diterima</option>
+								<option <?php echo ($value1['status'] == '6') ? 'selected' : '' ?> value="6">Selesai</option>
 							</select>
 							<span class="input-group-btn">
 								<button class="btn btn-cst red"><i class="fa fa-refresh"></i> Ubah Status</button>
@@ -95,6 +96,14 @@
 					<h5>JNE REG</h5>
 					<h5 class="b">Catatan : </h5>
 					<h5><?php echo $value1['catatan'] ?></h5>
+					<h5 class="b">Status : </h5>
+					<h5 class="txt-red" style="margin-bottom:20px;"><?php echo Lib::status($value1['status']) ?></h5>
+					<?php if($value1['resi'] != null){ ?>
+					<h5 class="b">No. Resi Pengiriman : </h5>
+					<a target="_blank" href="http://www.jne.co.id/tracking.php">
+						<h5 class="txt-red" style="margin-bottom:20px;"><?php echo $value1['resi'] ?></h5>
+					</a>
+					<?php } ?>
 				</div>
 				<div class="col-md-6">
 				<h5 class="b">Dikirm Ke : </h5>
@@ -148,6 +157,42 @@
 							</td>
 						</tr>
 					</table>
+					<h5 class="b">Data pembayaran : </h5>
+					<?php 
+					if(Lib::getConfirm($value1['kode_beli']) == null){
+					?>
+					Transaksi ini belum dibayar.
+					<?php
+					}else{
+					foreach (Lib::getConfirm($value1['kode_beli']) as $key3 => $value3) {
+					?>
+					<table border="0" width="100%" style="margin-bottom:20px;">
+						<tr>
+							<td style="vertical-align:top; padding-top:10px; width:50px; ">Bank Tujuan</td>
+							<td align="left" style="vertical-align:top; padding-top:10px;">
+								: <?php echo $value3['bank_tujuan'] ?>
+							</td>
+						</tr>
+						<tr>
+							<td style="vertical-align:top; padding-top:10px;">Bank yang digunakan</td>
+							<td align="left" style="vertical-align:top; padding-top:10px;">
+								: <?php echo $value3['bank_asal'] ?>
+							</td>
+						</tr>
+						<tr>
+							<td style="vertical-align:top; padding-top:10px;">No. Rekening</td>
+							<td align="left" style="vertical-align:top; padding-top:10px; width:120px;">
+								: <?php echo $value3['no_rekening'] ?>
+							</td>
+						</tr>
+						<tr>
+							<td style="vertical-align:top; padding-top:10px;">Pemilik Rekening</td>
+							<td align="left" style="vertical-align:top; padding-top:10px; width:120px;">
+								: <?php echo $value3['nama_pemilik_rekening'] ?>							
+							</td>
+						</tr>
+					</table>
+					<?php }} ?>
 				</div>
 				<div class="col-md-12">
 				<hr>

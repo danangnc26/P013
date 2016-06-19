@@ -1,9 +1,11 @@
 <div class="pull-right">
-	<span class="notif-round">2</span>
-	<i class="fa fa-bell" style="font-size:1.6em"></i>
+	<a href="<?php echo app_base.'index_pesanan' ?>">
+		<span class="notif-round"><?php echo Lib::pendingNotif() ?></span>
+		<i class="fa fa-bell" style="font-size:1.6em;color:#000"></i>
+	</a>
 </div>
 <div class="pull-right">
-	<span class="notif-round">2</span>
+	<span class="notif-round"></span>
 	<i class="fa fa-mail-reply-all" style="font-size:1.6em"></i>
 </div>
 <h3>Menu</h3>
