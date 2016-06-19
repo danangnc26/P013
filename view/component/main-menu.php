@@ -19,7 +19,7 @@
 			if(!empty($_SESSION) && $_SESSION['level_user'] == 'customer'){
 			?>
 			<li><a href="<?php echo app_base.'trans_history' ?>">Histori Transaksi</a></li>
-			<li><a href="<?php echo app_base.'' ?>">Estimasi Biaya Kirim</a></li>
+			<!-- <li><a href="<?php echo app_base.'' ?>">Estimasi Biaya Kirim</a></li> -->
 			<?php } ?>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
@@ -36,7 +36,7 @@
 				<li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['nama'] ?> <span class="caret"></span></a>
 					<ul class="dropdown-menu">
-					<li><a href="<?php echo app_base.'' ?>">Ubah Profil</a></li>
+					<!-- <li><a href="<?php echo app_base.'' ?>">Ubah Profil</a></li> -->
 					<li><a href="<?php echo app_base.'ubah_password' ?>">Ubah Password</a></li>
 						<li role="separator" class="divider"></li>
 						<li><a href="<?php echo app_base.'logout' ?>">Log Out</a></li>
