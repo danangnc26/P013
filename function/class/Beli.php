@@ -116,4 +116,22 @@ class Beli extends Core{
 		}
 	}
 
+	public function updStatCustomer($d)
+	{
+		try {
+			$data = ['status' => $d['status']];
+			if($this->update($data, $this->primaryKey, $d['kode_beli'])){
+				if($d['status'] == 5){
+					Lib::redirect('trans_detail&kode_beli='.$d['kode_beli']);
+				}else{
+					Lib::redirect('trans_history');
+				}
+			}else{
+				Lib::back();
+			}
+		} catch (Exception $e) {
+			echo $e->getMessage();
+		}
+	}
+
 }

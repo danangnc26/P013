@@ -35,4 +35,9 @@ class KonfirmasiPembayaran extends Core{
 		}
 	}
 
+	public function findKonfirmasi($kode_beli)
+	{
+		return $this->findBy('kode_beli', $kode_beli);
+	}
+
 }

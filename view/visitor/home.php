@@ -31,6 +31,11 @@
 					</a>
 					<?php }} ?>
 				<!-- </div> -->
+				<div class="col-md-12">
+					<a href="<?php echo app_base.'kategori&nama_kategori=semua' ?>">
+						<button class="btn btn-cst red nm full">Lihat Lainnya <i class="fa  fa-ellipsis-h"></i></button>
+					</a>
+				</div>
 		</div>
 	</div>
 </div>

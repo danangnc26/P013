@@ -19,14 +19,14 @@
 					<form method="post" action="<?php echo app_base.'update_pesanan' ?>">
 					<input type="hidden" name="kode_beli" value="<?php echo $value1['kode_beli'] ?>">
 					<div class="input-group" style="width:250px; margin-bottom:10px;">
-							<select name="status" class="form-control cst" style="width:200px;">
+							<select name="status" class="form-control cst" style="width:200px;" required>
 								<option <?php echo ($value1['status'] == '') ? 'selected' : '' ?> value="">-- Pilih Status --</option>
-								<option <?php echo ($value1['status'] == '-') ? 'selected' : '' ?> value="-">Dibatalkan</option>
+								<!-- <option <?php echo ($value1['status'] == '-') ? 'selected' : '' ?> value="-">Dibatalkan</option>
 								<option <?php echo ($value1['status'] == '1') ? 'selected' : '' ?> value="1">Pending</option>
-								<option <?php echo ($value1['status'] == '2') ? 'selected' : '' ?> value="2">Pembayaran Lunas</option>
+								<option <?php echo ($value1['status'] == '2') ? 'selected' : '' ?> value="2">Pembayaran Lunas</option> -->
 								<option <?php echo ($value1['status'] == '3') ? 'selected' : '' ?> value="3">Sedang Diproses</option>
 								<option <?php echo ($value1['status'] == '4') ? 'selected' : '' ?> value="4">Barang Dikirim</option>
-								<option <?php echo ($value1['status'] == '5') ? 'selected' : '' ?> value="5">Barang Diterima</option>
+								<!-- <option <?php echo ($value1['status'] == '5') ? 'selected' : '' ?> value="5">Barang Diterima</option> -->
 								<option <?php echo ($value1['status'] == '6') ? 'selected' : '' ?> value="6">Selesai</option>
 							</select>
 							<span class="input-group-btn">
@@ -62,6 +62,7 @@
 					<hr>
 				</div>
 				<div class="col-md-6">
+					<h5 class="b">Rangkuman Biaya : </h5>
 					<table border="0" width="100%" style="margin-bottom:20px;">
 						<tr>
 							<td style="vertical-align:top; padding-top:10px;">Harga Total</td>
@@ -199,6 +200,7 @@
 					<a href="<?php echo app_base.'index_pesanan' ?>">
 							<button type="button" class="btn btn-cst red"><i class="fa fa-arrow-left"></i> Kembali</button>
 						</a>
+						
 				</div>
 			</div>
 		</div>

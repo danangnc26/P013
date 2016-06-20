@@ -21,7 +21,7 @@
 					<div class="col-md-7">
 						<h4 style="margin-bottom:20px;"><?php echo $value1['nama_barang'] ?></h4>
 						<a href="#"><h3 style="margin-bottom:20px;"><?php echo Lib::ind($value1['harga']) ?></h3></a>
-						<p style="margin-bottom:5px;">Tersedia <b><i><?php echo $value1['stok'] ?></i></b> stok barang</p>
+						<p style="margin-bottom:5px;">Tersedia <b><i><?php echo $value1['stok'] ?></i></b> stok barang <?php if($value1['tgl_update']!=null){ ?><small class="txt-red pull-right">Diperbaharui pada ( <?php echo Lib::dateInd($value1['tgl_update'], true) ?> )</small><?php } ?></p>
 						<p style="margin-bottom:5px;">Ukuran <?php echo $value1['size'] ?></p>
 						<p style="margin-bottom:5px;">Berat <?php echo $value1['berat'] ?> gr</p>
 						<p>Deskripsi barang: <br><small><?php echo $value1['deskripsi'] ?></small></p>

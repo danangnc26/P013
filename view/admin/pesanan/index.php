@@ -22,7 +22,7 @@
 					<tbody>
 					<?php
 					if($data == null){
-						echo Lib::tblNotFound(6);
+						echo Lib::tblNotFound(7);
 					}else{
 					foreach ($data as $key => $value) {
 					?>

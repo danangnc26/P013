@@ -49,11 +49,11 @@ Class Lib{
 	{
 		
 		switch ($v) {
-			case 'r':
-				$vf = 'Barang dikembalikan';
+			case '9':
+				$vf = '<i class="fa fa-mail-reply"></i> Barang dikembalikan';
 				break;
-			case '-':
-				$vf = '<i class="fa fa-close"></i> Pemesanan Dibatalkan';
+			case '8':
+				$vf = '<i class="fa fa-close"></i> Transaksi Dibatalkan';
 				break;
 			case '0':
 				$vf = 'Pemesanan Belum Selesai';
@@ -223,6 +223,28 @@ Class Lib{
     {
     	$j = new Beli();
     	$result = $j->findAll("where status=1");
+    	if($result != null){
+    		return count($result);
+    	}else{
+    		return 0;
+    	}
+    }
+
+    public static function returNotif()
+    {
+    	$j = new Retur();
+    	$result = $j->findAll("where retur_status=0");
+    	if($result != null){
+    		return count($result);
+    	}else{
+    		return 0;
+    	}
+    }
+
+    public static function jmlBarangRetur($id)
+    {
+    	$j = new ItemRetur();
+    	$result = $j->findAll("where id_retur='".$id."'");
     	if($result != null){
     		return count($result);
     	}else{

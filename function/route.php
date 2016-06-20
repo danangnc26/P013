@@ -18,6 +18,8 @@ function route($page)
 	$beli = new Beli();
 	$itembeli = new ItemCart();
 	$konfirmasi = new KonfirmasiPembayaran();
+	$retur = new Retur();
+	$itemretur = new ItemRetur();
 	
 	switch ($page) {
 		case 'login':
@@ -110,6 +112,19 @@ function route($page)
 		case 'delete_customer':
 				$user->deleteUser($g['id_user']);
 			break;
+
+		case 'index_retur':
+				$data = $retur->index();
+				include "view/admin/retur/index.php";
+			break;
+		case 'detail_retur':
+				$data1 = $retur->findRetur($g['kode_beli']);
+				$data2 = $itemretur->findBarangRetur($g['id_retur']);
+				include "view/admin/retur/detail.php";
+			break;
+		case 'konfirmasi_pengembalian_dana':
+				$retur->konfirmasiPengembalianDana($g);
+			break;
 			
 		// // // // ADMIN // // // // 
 
@@ -167,6 +182,26 @@ function route($page)
 			break;
 		case 'save_konfirmasi':
 				$konfirmasi->saveKonfirmasi($p);
+			break;
+		case 'cancel_transaksi':
+				$d = ['kode_beli' => $g['kode_beli'], 'status' => '8'];
+				$beli->updStatCustomer($d);
+			break;
+		case 'upd_stat_customer':
+				if(isset($g['kode_beli']) && isset($g['status'])){
+					$d = ['kode_beli' => $g['kode_beli'], 'status' => $g['status']];
+				}
+				$beli->updStatCustomer($d);
+			break;
+		case 'retur_barang':
+				$data1 = $konfirmasi->findKonfirmasi($g['kode_beli']);
+				$data2 = $itembeli->barangBeli($g['kode_beli']);
+				include "view/visitor/retur.php";
+			break;
+		case 'send_retur':
+		// var_dump($p);
+			
+			$retur->sendRetur($p);
 			break;
 		case 'tesongkir':
 				// Ongkir::getProvList();

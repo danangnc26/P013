@@ -34,7 +34,10 @@
 						<i>Perbedaan nilai transfer akan menghambat proses verifikasi.</i>
 					</small>
 					<br><br>
-					Pembayaran dapat dilakukan ke salah satu rekening berikut.
+					Pembayaran dapat dilakukan ke salah satu rekening berikut.<br><br>
+					<a href="<?php echo app_base.'trans_detail&kode_beli='.$value['kode_beli'] ?>">
+						<button type="button" class="btn btn-cst red"><i class="fa fa-eye"></i> Lihat Detail Transaksi</button>
+					</a>
 				</center>
 				<div class="row" style="margin-top:20px;">
 					<div class="col-xs-6 col-md-3">

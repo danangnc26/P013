@@ -13,21 +13,40 @@
 		?>
 		<div class="row">
 				<div class="col-md-12">
+					<?php
+					if($value1['status'] == '8'){
+
+					}else{
+					?>
 					<button <?php echo (Lib::getConfirm($value1['kode_beli']) != null) ? 'disabled' : '' ?> data-toggle="modal" data-target="#myModal" type="button" class="btn btn-cst red"><i class="fa fa-money"></i> Konfirmasi Pembayaran</button>
 					<!-- <button type="button" class="btn btn-cst red"><i class="fa fa-mail-reply-all"></i> Return Barang</button> -->
+					<?php } ?>
 
 					<?php if($value1['status'] == '4'){ ?>
-					<button type="button" class="btn btn-cst red"><i class="fa fa-dropbox"></i> Konfirmasi Barang Diterima</button>
+					<button type="button" onclick="konfirmasiBarangDiterima('<?php echo $value1['kode_beli'] ?>')" class="btn btn-cst red"><i class="fa fa-dropbox"></i> Konfirmasi Barang Diterima</button>
 					<?php } ?>
 
 					<?php if($value1['status'] == '5'){ ?>
-					<button type="button" class="btn btn-cst red"><i class="fa fa-mail-reply-all"></i> Return Barang</button>
+					<!-- <button type="button" class="btn btn-cst red"><i class="fa fa-mail-reply-all"></i> Return Barang</button> -->
 					<?php } ?>
 
 
 					<h4 class="pull-right">Kode Transaksi : <span class="txt-red"><?php echo $value1['kode_beli'] ?></span></h4>
 					<br><br>
 					<hr>
+					<script type="text/javascript">
+						  function konfirmasiBarangDiterima(id) {
+						  	if (confirm('Dengan ini saya menyatakan bahwa barang sudah diterima.')) {
+						  		if(confirm('Apakah anda ingin mengajukan return barang ?\n - Tekan Cancel jika tidak ingin mengajukan return barang')){
+						  			location.replace("<?php echo app_base.'retur_barang&kode_beli=' ?>"+id+'&status=5');
+						  		}else{
+						  			location.replace("<?php echo app_base.'upd_stat_customer&kode_beli=' ?>"+id+'&status=5');
+						  		}
+							} else {
+							    // alert('asdf');
+							}
+						  }
+					  </script>
 					<div class="row">
 						<?php
 						if($data2 == null){
@@ -55,6 +74,7 @@
 					<hr>
 				</div>
 				<div class="col-md-6">
+					<h5 class="b">Rangkuman Biaya : </h5>
 					<table border="0" width="100%" style="margin-bottom:20px;">
 						<tr>
 							<td style="vertical-align:top; padding-top:10px;">Harga Total</td>
@@ -91,12 +111,12 @@
 					<h5><?php echo $value1['catatan'] ?></h5>
 					<h5 class="b">Status : </h5>
 					<h5 class="txt-red" style="margin-bottom:20px;"><?php echo Lib::status($value1['status']) ?></h5>
-					<?php if($value1['resi'] != null){ ?>
+					
 					<h5 class="b">No. Resi Pengiriman : </h5>
 					<a target="_blank" href="http://www.jne.co.id/tracking.php">
 						<h5 class="txt-red" style="margin-bottom:20px;"><?php echo $value1['resi'] ?></h5>
 					</a>
-					<?php } ?>
+					
 				</div>
 				<div class="col-md-6">
 				<h5 class="b">Dikirim Ke : </h5>
@@ -192,6 +212,11 @@
 					<a href="<?php echo app_base.'trans_history' ?>">
 							<button type="button" class="btn btn-cst red"><i class="fa fa-arrow-left"></i> Kembali</button>
 						</a>
+					<?php if($value1['status'] == '1'){ ?>
+					<a href="<?php echo app_base.'cancel_transaksi&kode_beli='.$value1['kode_beli'] ?>">
+						<button onclick="return confirm('Batalkan transaksi ini?')" type="button" class="btn btn-cst red"><i class="fa fa-close"></i> Batalkan Transaksi</button>
+					</a>
+					<?php } ?>
 				</div>
 			</div>
 	</div>

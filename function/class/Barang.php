@@ -89,7 +89,7 @@ class Barang extends Core{
 
 	public function getPublishedHome()
 	{
-		return $this->findAll("where publikasi=1 limit 9");
+		return $this->findAll("where publikasi=1 order by tgl_post desc limit 9");
 	}
 
 	public function randomBarang()

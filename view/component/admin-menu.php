@@ -5,7 +5,7 @@
 	</a>
 </div>
 <div class="pull-right">
-	<span class="notif-round"></span>
+	<span class="notif-round"><?php echo Lib::returNotif() ?></span>
 	<i class="fa fa-mail-reply-all" style="font-size:1.6em"></i>
 </div>
 <h3>Menu</h3>
@@ -27,7 +27,7 @@
 		<a href="<?php echo app_base.'index_customer' ?>">Daftar Customer</a>
 	</li>
 	<li role="presentation" class="active">
-		<a href="<?php echo app_base.'index_' ?>">Retur Barang</a>
+		<a href="<?php echo app_base.'index_retur' ?>">Retur Barang</a>
 	</li>
 	<li role="presentation" class="active">
 		<a href="<?php echo app_base.'index_' ?>">Laporan</a>
