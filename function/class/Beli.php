@@ -123,6 +123,8 @@ class Beli extends Core{
 			if($this->update($data, $this->primaryKey, $d['kode_beli'])){
 				if($d['status'] == 5){
 					Lib::redirect('trans_detail&kode_beli='.$d['kode_beli']);
+				}elseif($d['status'] == 6){
+					echo Lib::redirectjs(app_base.'index_retur', 'Dana berhasil dikembalikan.');
 				}else{
 					Lib::redirect('trans_history');
 				}

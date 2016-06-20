@@ -68,6 +68,8 @@ class Retur extends Core{
 		try {
 			$data = ['retur_status' => 1];
 			if($this->update($data, $this->primaryKey, $g['id_retur'])){
+				$d = ['status' => '6', 'kode_beli' => $g['kode_beli']];
+				$this->beli->updStatCustomer($d);
 				echo Lib::redirectjs(app_base.'index_retur', 'Dana berhasil dikembalikan.');
 			}else{
 				Lib::back();
